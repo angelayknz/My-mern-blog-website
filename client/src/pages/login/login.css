@@ -1,0 +1,80 @@
+.login {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+
+  /* align-items: center; */
+  /* justify-content: center; */
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('https://images.pexels.com/photos/6958760/pexels-photo-6958760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover;
+}
+
+/* .loginTitle {
+  font-size: 50px;
+  margin-left: 150px
+} */
+
+.loginForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 320px;
+  margin-top: 300px;
+}
+
+.loginForm > label {
+  margin: 15px 0;
+}
+
+.loginInput {
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  width: 350px;
+  height: 25px
+  
+}
+
+.loginInput:focus {
+  outline: none;
+}
+
+.loginButton {
+
+  cursor: pointer;
+  background-color: #915d5d;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  width: 370px;
+  display: inline-block;
+  
+}
+
+.loginButton:disabled {
+  cursor: not-allowed;
+  backgroung-color: red;
+}
+
+/* .loginRegisterButton {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: teal;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+} */

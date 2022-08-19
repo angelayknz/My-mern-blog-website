@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css2?family=Amaranth&display=swap);
+.top {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 25px
+}
+
+.topLeft,
+.topRight {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.topLeft h2 {
+  color: #34495e;
+  font-family: 'Amaranth', sans-serif !important;
+  font-size: 1.5em
+}
+
+.topIcon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #444;
+  cursor: pointer;
+}
+
+.topCenter {
+  flex: 6;
+}
+
+.topList {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topListItem {
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.topListItem:hover {
+  color: gray;
+}
+
+.topImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.topSearchIcon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+}
+
+.t{
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  border: 1px solid #999;
+  /* background-color: #d2cfcf; */
+  position: fixed;
+  top: 0px;
+  right: 30px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 32px
+}
+
+.t-icon{
+  width: 15px;
+  height: 15px;
+}
+
+.t-button{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #d2cfcf;
+  position: absolute;
+  cursor: pointer;
+  align-items: center
+}
