@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import './write.css'
-import axios from 'axios'
 import { Context } from '../../context/Context'
+import { axiosInstance } from '../../config'
 
 export default function Write() {
   const [title, setTitle] = useState('')
@@ -24,11 +24,11 @@ export default function Write() {
       data.append('file', file)
       newPost.photo = filename
       try {
-        await axios.post('/upload', data)
+        await axiosInstance.post('/upload', data)
       } catch (err) {}
     }
     try {
-      const res = await axios.post('/posts', newPost)
+      const res = await axiosInstance.post('/posts', newPost)
       window.location.replace('/post/' + res.data._id)
     } catch (err) {}
   }
@@ -37,28 +37,26 @@ export default function Write() {
       {file && (
         <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       )}
-      <h2 className='title'>Add a new blog here</h2>
+      <h2 className="title">Add a new blog here</h2>
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
-        <input
+          <input
             type="text"
             placeholder="Blog title..."
             className="writeInput"
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <div className='upload'> 
-         
-          <label htmlFor="fileInput"> Upload cover image here</label>    
-          <i className="writeIcon fas fa-upload"></i>  
-        </div>
+          <div className="upload">
+            <label htmlFor="fileInput"> Upload cover image here</label>
+            <i className="writeIcon fas fa-upload"></i>
+          </div>
           <input
             type="file"
             id="fileInput"
             style={{ display: 'none' }}
             onChange={(e) => setFile(e.target.files[0])}
           />
-          
         </div>
         <div className="writeFormGroup">
           <textarea

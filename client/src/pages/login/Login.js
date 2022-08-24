@@ -1,8 +1,7 @@
-import axios from 'axios'
 import { useContext, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import { Context } from '../../context/Context'
 import './login.css'
+import { axiosInstance } from '../../config'
 
 export default function Login() {
   const userRef = useRef()
@@ -13,7 +12,7 @@ export default function Login() {
     e.preventDefault()
     dispatch({ type: 'LOGIN_START' })
     try {
-      const res = await axios.post('/auth/login', {
+      const res = await axiosInstance.post('/auth/login', {
         username: userRef.current.value,
         password: passwordRef.current.value,
       })
@@ -25,7 +24,6 @@ export default function Login() {
   console.log(user)
   console.log(isFetching)
   return (
-
     <div className="login">
       {/* <span className="loginTitle">Login</span> */}
       <form className="loginForm" onSubmit={handleSubmit}>
@@ -43,11 +41,10 @@ export default function Login() {
           placeholder="Enter your password..."
           ref={passwordRef}
         />
-     
+
         <button className="loginButton" type="submit" disabled={isFetching}>
           Login
         </button>
-      
       </form>
       {/* <button className="loginRegisterButton">
         <Link className="link" to="/register">
