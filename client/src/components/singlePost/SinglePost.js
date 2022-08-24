@@ -7,7 +7,7 @@ import { axiosInstance } from '../../config'
 
 export default function SinglePost() {
   const location = useLocation()
-  const PF = 'https://angelayang.netlify.app/images/'
+  const PF = 'https://angela-blog-app.herokuapp.com/images/'
   // path is the postId
   const path = location.pathname.split('/')[2]
   const [post, setPost] = useState({})
